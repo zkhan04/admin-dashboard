@@ -5,13 +5,15 @@
     --header-text-color: white;
     --header-background-color: rgb(8, 0, 85);
 
+    --section-header-color: white;
     --main-content-background-color: black;
     --main-content-gap: 20px;
     --card-background-color: rgb(48, 30, 148);
     --card-text-color: white;
-    --section-header-color: white;
 
+    --bio-color: lightslategray;
 
+    --sidebar-width: 300px;
     --sidebar-background-color: rgb(0, 13, 194);
     --sidebar-text-color: white;
     font-family: 'EB Garamond', serif;
@@ -26,12 +28,14 @@ html, body {
 
 body {
     display: grid;
-    grid: 1fr 8fr / 300px 1fr;
+    grid: 1fr 8fr / var(--sidebar-width) 1fr;
 }
 
 button {
     padding: 5px;
     border-style: none;
+    font-size: 15px;
+    font-weight: bold;
     height: 2em;
     border-radius: 1em;
 }
@@ -104,14 +108,6 @@ button {
         }
     }
 
-    .card {
-        background-color: var(--card-background-color);
-        color: var(--card-text-color);
-        border-radius: 8px;
-        padding: 15px;
-        box-shadow: 3px 3px 3px red;
-    }
-
     .projects {
         grid-area: 1 / 1 / 7 / 3;
         display: flex;
@@ -181,10 +177,18 @@ button {
             }
         
             .bio {
-                color: lightslategray;
+                color: var(--bio-color)
             }
         }
     }
+}
+
+.card {
+    background-color: var(--card-background-color);
+    color: var(--card-text-color);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 3px 3px 3px red;
 }
 
 .sidebar {
